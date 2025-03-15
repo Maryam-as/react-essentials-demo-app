@@ -1,4 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
+import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 
 // define a list of words
@@ -21,16 +22,6 @@ function Header() {
         going to build!
       </p>
     </header>
-  );
-}
-// use object destructuring
-function CoreConcept({ image, title, description }) {
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
   );
 }
 
