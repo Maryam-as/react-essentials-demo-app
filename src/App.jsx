@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
   return (
@@ -23,7 +24,12 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           {/* create a list of buttons with menu element */}
-          <menu></menu>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
