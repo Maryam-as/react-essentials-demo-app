@@ -19,6 +19,12 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
+        {/* for styling purposes */}
+        <section id="examples">
+          <h2>Examples</h2>
+          {/* create a list of buttons with menu element */}
+          <menu></menu>
+        </section>
       </main>
     </div>
   );
