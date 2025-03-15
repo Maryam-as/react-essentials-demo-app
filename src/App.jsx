@@ -1,4 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
+import componentsImg from "./assets/components.png";
 
 // define a list of words
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
@@ -23,12 +24,31 @@ function Header() {
   );
 }
 
+function CoreConcept() {
+  return (
+    <li>
+      <img src="..." alt="..." />
+      <h3>TITLE</h3>
+      <p>DESCRIPTION</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        {/* for styling purposes */}
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConcept />
+            <CoreConcept />
+            <CoreConcept />
+            <CoreConcept />
+          </ul>
+        </section>
       </main>
     </div>
   );
