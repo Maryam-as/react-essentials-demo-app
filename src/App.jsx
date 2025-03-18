@@ -4,6 +4,10 @@ import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  function handleSelect(selectedButton) {
+    // selectedButton => 'components', 'jsx', 'props', 'state'
+    console.log(selectedButton);
+  }
   return (
     <div>
       <Header />
@@ -25,11 +29,14 @@ function App() {
           <h2>Examples</h2>
           {/* create a list of buttons with menu element */}
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          DYNAMIC CONTENT
         </section>
       </main>
     </div>

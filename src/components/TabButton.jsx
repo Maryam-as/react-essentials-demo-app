@@ -1,7 +1,9 @@
-export default function TabButton(props) {
+// object destructuring
+export default function TabButton({ children, onSelect }) {
   return (
     <li>
-      <button>{props.children}</button>
+      {/* handleClick must not be executed, written without () */}
+      <button onClick={onSelect}>{children}</button>
     </li>
   );
 }
