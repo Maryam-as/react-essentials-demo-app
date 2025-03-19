@@ -7,9 +7,10 @@ import { EXAMPLES } from "./data.js";
 
 function App() {
   // useState hook returns an array with exactly two elements which we can store in two separate constants using array destructuring
-  const [selectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
+    // store these identifiers in the state
     setSelectedTopic(selectedButton);
   }
   return (
@@ -40,14 +41,18 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {/* for styling purposes */}
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {/* output data conditionally using ternary expression */}
+          {!selectedTopic ? <p>Please select a topic.</p> : null}
+          {selectedTopic ? (
+            <div id="tab-content">
+              {/* use the state to access the data dynamically */}
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          ) : null}
         </section>
       </main>
     </div>
