@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const stateArray = useState("Please click a button.");
   let tabContent = "Please click a button.";
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
