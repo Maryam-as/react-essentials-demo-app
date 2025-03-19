@@ -41,9 +41,9 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {/* output data conditionally using ternary expression */}
-          {!selectedTopic ? <p>Please select a topic.</p> : null}
-          {selectedTopic ? (
+          {/* output data conditionally using logical && */}
+          {!selectedTopic && <p>Please select a topic.</p>}
+          {selectedTopic && (
             <div id="tab-content">
               {/* use the state to access the data dynamically */}
               <h3>{EXAMPLES[selectedTopic].title}</h3>
@@ -52,7 +52,7 @@ function App() {
                 <code>{EXAMPLES[selectedTopic].code}</code>
               </pre>
             </div>
-          ) : null}
+          )}
         </section>
       </main>
     </div>
