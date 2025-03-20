@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TabButton from "./TabButton";
 import { EXAMPLES } from "../data";
+import Section from "./Section";
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -22,9 +23,7 @@ export default function Examples() {
     );
   }
   return (
-    <section id="examples">
-      <h2>Examples</h2>
-      {/* create a list of buttons with menu element */}
+    <Section title="Examples" id="examples">
       <menu>
         <TabButton
           // check if the button is selected based on the state
@@ -53,6 +52,6 @@ export default function Examples() {
         </TabButton>
       </menu>
       {tabContent}
-    </section>
+    </Section>
   );
 }
