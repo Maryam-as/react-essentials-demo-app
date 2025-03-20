@@ -28,7 +28,7 @@ function App() {
     );
   }
   return (
-    <div>
+    <>
       <Header />
       <main>
         {/* for styling purposes */}
@@ -74,7 +74,7 @@ function App() {
           {tabContent}
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
